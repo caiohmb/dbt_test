@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: jaffle_shop
+    schema: dbo
+    tables:
+      - name: payments
+        loaded_at_field: CREATED
+        freshness:
+          warn_after: {count: 999999, period: hour}
+          error_after: {count: 9999, period: day}
