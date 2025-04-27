@@ -4,4 +4,4 @@ select
     ORDER_DATE as order_date,
     STATUS as status
 
-from dbo.orders
+from {{ source('jaffle_shop', 'orders') }}
